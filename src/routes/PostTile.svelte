@@ -13,7 +13,8 @@
 
     <div class="post__contents">
         {#if post.title}
-            <h2 class="post__title">{post.title}</h2>
+            <!-- TODO: human-readable ID generator -->
+            <a href="/{post.id}" class="post__title">{post.title}</a>
         {/if}
 
         {#if post.image}
@@ -70,6 +71,12 @@
         text-wrap: balance;
 
         font-size: var(--font-size-600);
+        font-weight: bold;
+    }
+
+    .post__title:hover,
+    .post__title:focus {
+        text-decoration: underline;
     }
 
     .post__body-text {

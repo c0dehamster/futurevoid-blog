@@ -16,7 +16,7 @@ let testPostImage: Post = {
     image: elster,
     bodyText:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore rerum quis dolorem voluptate nobis laboriosam quas laudantium dolore, quod quisquam dolorum ab corporis at similique adipisci reiciendis, nulla minus veniam est vel eius consequuntur deleniti!",
-    tags: ["test", "dummy", "to be removed", "image", "Elster"],
+    tags: ["test", "dummy", "to be removed", "image"],
 }
 
 export const testPosts = [testPost, testPostImage]
