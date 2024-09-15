@@ -1,18 +1,15 @@
 <script lang="ts">
-    import type { Post } from "$lib/types/post"
-
-    import { testTagsList } from "$lib/test-data/testTagsList"
-
     import PostTile from "./PostTile.svelte"
     import Tags from "./Tags.svelte"
-    import { testPosts } from "$lib/test-data/testPost"
 
-    let posts: Array<Post> | null = testPosts
+    export let data
+
+    let { posts, tags } = data
 </script>
 
 <div class="page-wrapper">
     <main class="main">
-        <Tags tags={testTagsList}></Tags>
+        <Tags {tags}></Tags>
 
         {#if posts}
             <ul class="feed">

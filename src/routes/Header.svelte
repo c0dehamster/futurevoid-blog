@@ -27,6 +27,7 @@
         position: fixed;
         inset-block-start: 0;
         inset-inline: 0;
+        z-index: 10;
 
         height: 4rem;
 

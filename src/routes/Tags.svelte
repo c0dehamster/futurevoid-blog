@@ -20,6 +20,8 @@
                 {/each}
             </ul>
         {/if}
+
+        <!-- TODO: make the button flip on toggle -->
         <button class="tags__button" on:click={() => (expanded = !expanded)}>
             <img src={iconExpand} alt="expand" class="tags__icon" />
         </button>
