@@ -1,8 +1,16 @@
 @font-face {
-    font-family: "open_sansregular";
+    font-family: "open_sans";
     src: url("/open-sans/opensans-regular-webfont.woff2") format("woff2"),
         url("/open-sans/opensans-regular-webfont.woff") format("woff");
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "open_sans";
+    src: url("/open-sans/opensans-semibold-webfont.woff2") format("woff2"),
+        url("/open-sans/opensans-semibold-webfont.woff") format("woff");
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -119,15 +127,9 @@ select {
 }
 
 body {
-    font-family: "open_sansregular";
+    font-family: "open_sans";
 
     color: var(--color-neutral-100);
-}
-
-h1,
-h2,
-h3 {
-    font-weight: normal;
 }
 
 ul,
