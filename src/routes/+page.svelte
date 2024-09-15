@@ -1,13 +1,13 @@
 <script lang="ts">
     import type { Post } from "$lib/types/post"
 
-    import { testPost } from "$lib/test-data/testPost"
     import { testTagsList } from "$lib/test-data/testTagsList"
 
     import PostTile from "./PostTile.svelte"
     import Tags from "./Tags.svelte"
+    import { testPosts } from "$lib/test-data/testPost"
 
-    let posts: Array<Post> | null = [testPost, testPost]
+    let posts: Array<Post> | null = testPosts
 </script>
 
 <div class="page-wrapper">
