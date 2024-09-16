@@ -1,19 +1,25 @@
 <script lang="ts">
     import type { Post } from "$lib/types/post"
+    import type { Tag } from "$lib/types/tag"
+
     import PostTile from "./PostTile.svelte"
     import Tags from "./Tags.svelte"
+
     import { tagsSelectedStore } from "./tagsSelected"
 
     export let data
 
-    let { posts, tags } = data
+    // Type assertion because Appwrite does not
+    // provide type safety
+    let posts = data.posts.documents as unknown as Array<Post>
+    let tags = data.tags
 
     let postsToShow: Array<Post> = []
 
     $: {
         if ($tagsSelectedStore.length > 0) {
             postsToShow = posts.filter((post) =>
-                post.tags?.some((taggedWith) =>
+                post.tags?.some((taggedWith: Tag) =>
                     $tagsSelectedStore.includes(taggedWith)
                 )
             )
