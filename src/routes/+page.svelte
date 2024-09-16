@@ -1,19 +1,35 @@
 <script lang="ts">
+    import type { Post } from "$lib/types/post"
     import PostTile from "./PostTile.svelte"
     import Tags from "./Tags.svelte"
+    import { tagsSelectedStore } from "./tagsSelected"
 
     export let data
 
     let { posts, tags } = data
+
+    let postsToShow: Array<Post> = []
+
+    $: {
+        if ($tagsSelectedStore.length > 0) {
+            postsToShow = posts.filter((post) =>
+                post.tags?.some((taggedWith) =>
+                    $tagsSelectedStore.includes(taggedWith)
+                )
+            )
+        } else {
+            postsToShow = posts
+        }
+    }
 </script>
 
 <div class="page-wrapper">
     <main class="main">
         <Tags {tags}></Tags>
 
-        {#if posts}
+        {#if postsToShow}
             <ul class="feed">
-                {#each posts as post}
+                {#each postsToShow as post}
                     <li class="feed__list-item">
                         <PostTile {post}></PostTile>
                     </li>

@@ -9,4 +9,5 @@ export const testTagsList: Array<Tag> = [
     "dolor",
     "sit",
     "amet",
+    "image",
 ]

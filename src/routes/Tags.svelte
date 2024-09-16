@@ -2,19 +2,19 @@
     import type { Tag } from "$lib/types/tag"
 
     import iconExpand from "$lib/Images/icon-expand-more.svg"
+    import { tagsSelectedStore as tagsSelectedStore } from "./tagsSelected"
 
     export let tags: Array<Tag> | null
 
-    let selected: Array<Tag> = []
     let expanded = false
 </script>
 
 <div class="tags">
     <div class="tags__header">
         <p class="tags__label">Tags:</p>
-        {#if selected.length > 0}
+        {#if $tagsSelectedStore.length > 0}
             <ul class="selected">
-                {#each selected as tagSelected}
+                {#each $tagsSelectedStore as tagSelected}
                     <div class="selected__list-item">{tagSelected}</div>
                     <!-- TODO: implement click-to-remove -->
                 {/each}
@@ -38,7 +38,7 @@
                             <input
                                 type="checkbox"
                                 class="tag-item__checkbox hidden"
-                                bind:group={selected}
+                                bind:group={$tagsSelectedStore}
                                 value={tag}
                                 id={tag}
                             />

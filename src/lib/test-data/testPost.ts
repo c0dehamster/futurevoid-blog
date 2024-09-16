@@ -6,7 +6,7 @@ let testPost: Post = {
     id: "testPost1",
     title: "The first post on my blog",
     bodyText:
-        "It is hard-coded into the test data inside the lib folder of the blog itself. If you see it, the either the blog is not finished yet, or something went terribly wrong.",
+        "It is hard-coded into the test data inside the lib folder of the blog itself. If you see it, then either the blog is not finished yet, or something went terribly wrong.",
     tags: ["test", "dummy", "to be removed"],
 }
 
