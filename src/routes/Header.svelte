@@ -9,6 +9,11 @@
         <img src={iconMenu} alt="menu" class="toggle-nav__icon" />
     </button>
 
+    <!-- Temporary. TODO: make a proper logo -->
+    <div class="logo">
+        <a href="/" class="logo__link">FutureVoid</a>
+    </div>
+
     <nav class="navigation {expanded ? 'navigation--expanded' : ''}">
         <div class="navigation__buffer">
             <ul class="navigation__list">
@@ -44,13 +49,18 @@
 
         height: 4rem;
 
-        padding-inline: 8rem;
+        padding-inline: 4rem;
 
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: space-between;
 
         background-color: var(--color-primary-400);
+    }
+
+    .logo {
+        font-size: var(--font-size-500);
+        font-weight: bold;
     }
 
     .toggle-nav {
@@ -93,9 +103,7 @@
 
     @media screen and (width < 40rem) {
         .header {
-            padding-inline: 1.5rem;
-
-            justify-content: start;
+            padding-inline-end: 1.5rem;
         }
         .toggle-nav {
             display: inline-flex;
@@ -154,6 +162,12 @@
 
         .navigation__link {
             font-weight: bold;
+        }
+    }
+
+    @media screen and (width > 64rem) {
+        .header {
+            padding-inline: 8rem;
         }
     }
 </style>
