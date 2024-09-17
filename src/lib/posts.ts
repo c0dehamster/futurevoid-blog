@@ -15,6 +15,15 @@ export const getPosts = async () => {
     )
 }
 
+export const getPostById = async (documentId: string) => {
+    return await databases.getDocument(
+        POSTS_DATABASE_ID,
+        POSTS_COLLECTION_ID,
+        documentId,
+        []
+    )
+}
+
 /* The following will be used when I implement accounts */
 
 export const addPost = async (

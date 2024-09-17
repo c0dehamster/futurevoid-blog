@@ -1,15 +1,9 @@
 <script lang="ts">
-    import { page } from "$app/stores"
-    import { testPosts } from "$lib/test-data/testPost"
     import type { Post } from "$lib/types/post"
-    import Tags from "../Tags.svelte"
 
-    let posts = testPosts
-    let post: Post | undefined // Needs a proper fix
+    export let data
 
-    $: {
-        post = testPosts.find((post) => post.id === $page.params.postExpanded)
-    }
+    let post = data.post as unknown as Post
 </script>
 
 <div class="page-wrapper">
