@@ -12,7 +12,20 @@
     // Type assertion because Appwrite does not
     // provide type safety
     let posts = data.posts.documents as unknown as Array<Post>
-    let tags = data.tags
+
+    let tags: Array<Tag> = []
+
+    // TODO: find a prettier/more concise way of making the list of tags
+
+    posts.forEach((post) => {
+        if (post.tags) {
+            post.tags.forEach((tag) => {
+                if (!tags.includes(tag)) {
+                    tags.push(tag)
+                }
+            })
+        }
+    })
 
     let postsToShow: Array<Post> = []
 
