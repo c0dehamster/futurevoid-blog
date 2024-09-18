@@ -1,7 +1,10 @@
-import { getPostById } from "$lib/posts.js"
+import { parseDocumentAsPost } from "$lib/parseDocumentAsPost.js"
+import { getImage, getPostById } from "$lib/posts.js"
 
 export const load = async ({ params }) => {
-    // HACK: Relies on the post's id and DocumentID being the same
-    let post = await getPostById(params.postSelected)
+    let response = await getPostById(params.postSelected)
+
+    let post = await parseDocumentAsPost(response)
+
     return { post }
 }

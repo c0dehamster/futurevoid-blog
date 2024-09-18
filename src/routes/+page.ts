@@ -1,5 +1,5 @@
+import { parseDocumentAsPost } from "$lib/parseDocumentAsPost"
 import { getImage, getPosts } from "$lib/posts"
-import type { DBDocument } from "$lib/types/DBdocument"
 import type { Post } from "$lib/types/post"
 
 export const load = async () => {
@@ -11,24 +11,7 @@ export const load = async () => {
     // Otherwise, it loads before imageUrl promise resolves
 
     response.documents.forEach(async (document) => {
-        let id = document.$id
-
-        // Type assertion because Appwrite does not
-        // provide type safety
-
-        let postAsDocument = document as unknown as DBDocument
-
-        let imageUrl = postAsDocument.imageId
-            ? (await getImage(postAsDocument.imageId)).href
-            : null
-
-        let post: Post = {
-            id,
-            title: postAsDocument.title,
-            imageUrl,
-            bodyText: postAsDocument.bodyText,
-            tags: postAsDocument.tags,
-        }
+        let post = await parseDocumentAsPost(document)
 
         posts.push(post)
     })

@@ -30,8 +30,6 @@
     let postsToShow: Array<Post> = []
 
     $: {
-        console.log(posts)
-
         if ($tagsSelectedStore.length > 0) {
             postsToShow = posts.filter((post) =>
                 post.tags?.some((taggedWith: Tag) =>
