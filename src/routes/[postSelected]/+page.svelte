@@ -15,8 +15,8 @@
                         <h1 class="post__title">{post.title}</h1>
                     {/if}
 
-                    {#if post.image}
-                        <img src={post.image} alt="" class="post__image" />
+                    {#if post.imageUrl}
+                        <img src={post.imageUrl} alt="" class="post__image" />
                     {/if}
 
                     {#if post.bodyText}

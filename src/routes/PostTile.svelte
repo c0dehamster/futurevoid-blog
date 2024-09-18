@@ -17,8 +17,8 @@
             <a href="/{post.id}" class="post__title">{post.title}</a>
         {/if}
 
-        {#if post.image}
-            <img src={post.image} alt="" class="post__image" />
+        {#if post.imageUrl}
+            <img src={post.imageUrl} alt="" class="post__image" />
         {/if}
 
         {#if post.bodyText}

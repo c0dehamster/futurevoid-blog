@@ -13,7 +13,7 @@ let testPost: Post = {
 let testPostImage: Post = {
     id: "testPost2",
     title: "This post has an image in it",
-    image: elster,
+    imageUrl: elster,
     bodyText:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore rerum quis dolorem voluptate nobis laboriosam quas laudantium dolore, quod quisquam dolorum ab corporis at similique adipisci reiciendis, nulla minus veniam est vel eius consequuntur deleniti!",
     tags: ["test", "dummy", "to be removed", "image"],

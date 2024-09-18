@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { getImage } from "$lib/posts"
+    import type { DBDocument } from "$lib/types/DBdocument"
     import type { Post } from "$lib/types/post"
     import type { Tag } from "$lib/types/tag"
 
@@ -9,9 +11,7 @@
 
     export let data
 
-    // Type assertion because Appwrite does not
-    // provide type safety
-    let posts = data.posts.documents as unknown as Array<Post>
+    let posts = data.posts
 
     let tags: Array<Tag> = []
 
@@ -30,6 +30,8 @@
     let postsToShow: Array<Post> = []
 
     $: {
+        console.log(posts)
+
         if ($tagsSelectedStore.length > 0) {
             postsToShow = posts.filter((post) =>
                 post.tags?.some((taggedWith: Tag) =>
