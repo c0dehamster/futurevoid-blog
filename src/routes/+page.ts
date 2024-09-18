@@ -7,6 +7,9 @@ export const load = async () => {
 
     let posts: Array<Post> = []
 
+    // Converting response to posts before loading the page
+    // Otherwise, it loads before imageUrl promise resolves
+
     response.documents.forEach(async (document) => {
         let id = document.$id
 
@@ -22,7 +25,7 @@ export const load = async () => {
         let post: Post = {
             id,
             title: postAsDocument.title,
-            imageUrl: imageUrl,
+            imageUrl,
             bodyText: postAsDocument.bodyText,
             tags: postAsDocument.tags,
         }
