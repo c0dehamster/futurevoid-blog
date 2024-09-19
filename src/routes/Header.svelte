@@ -33,7 +33,10 @@
                 </li>
 
                 <li class="navigation__list-item">
-                    <a href="/rss-feed" class="navigation__link">RSS feed</a>
+                    <a
+                        href="http://fetchrss.com/rss/66ec7d869593fd7de00868e266ec7d3a09afc3e54603bc33.xml"
+                        class="navigation__link">RSS feed</a
+                    >
                 </li>
             </ul>
         </div>
