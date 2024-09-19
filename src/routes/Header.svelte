@@ -82,6 +82,8 @@
         white-space: nowrap;
     }
 
+    /* TODO: highlight the link that corresponds to the current route */
+
     .navigation__link {
         position: relative;
     }

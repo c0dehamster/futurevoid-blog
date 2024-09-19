@@ -130,7 +130,7 @@
         }
 
         .hero__description {
-            max-width: 40rem;
+            max-width: 32rem;
             font-size: var(--font-size-600);
         }
 
