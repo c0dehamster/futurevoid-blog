@@ -2,7 +2,8 @@
     import type { Tag } from "$lib/types/tag"
 
     import iconExpand from "$lib/Images/icon-expand-more.svg"
-    import { tagsSelectedStore as tagsSelectedStore } from "./tagsSelected"
+
+    import { tagsSelectedStore } from "./tagsSelectedStore"
 
     export let tags: Array<Tag> | null
 
@@ -15,7 +16,12 @@
         {#if $tagsSelectedStore.length > 0}
             <ul class="selected">
                 {#each $tagsSelectedStore as tagSelected}
-                    <div class="selected__list-item">{tagSelected}</div>
+                    <button
+                        class="selected__list-item"
+                        on:click={() =>
+                            tagsSelectedStore.removeTag(tagSelected)}
+                        >{tagSelected}</button
+                    >
                     <!-- TODO: implement click-to-remove -->
                 {/each}
             </ul>
@@ -98,6 +104,7 @@
         border-radius: 1rem;
 
         background-color: var(--color-primary-400);
+        color: var(--color-neutral-100);
     }
 
     /* Dropdown */
