@@ -127,7 +127,7 @@ select {
 }
 
 body {
-    font-family: "open_sans";
+    font-family: "open_sans", sans-serif;
 
     color: var(--color-neutral-100);
 }
