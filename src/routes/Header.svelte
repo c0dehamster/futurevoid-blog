@@ -78,6 +78,8 @@
         align-items: center;
         justify-content: end;
         gap: 2.5rem;
+
+        white-space: nowrap;
     }
 
     .navigation__link {
@@ -103,7 +105,7 @@
 
     @media screen and (width < 40rem) {
         .header {
-            padding-inline-end: 1.5rem;
+            padding-inline: 1.5rem;
         }
         .toggle-nav {
             display: inline-flex;
@@ -146,8 +148,6 @@
             flex-direction: column;
             align-items: start;
             gap: 3rem;
-
-            white-space: nowrap;
         }
 
         .navigation__list-item--featured {
