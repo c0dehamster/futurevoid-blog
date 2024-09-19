@@ -1,5 +1,5 @@
 import { parseDocumentAsPost } from "$lib/parseDocumentAsPost.js"
-import { getImage, getPostById } from "$lib/posts.js"
+import { getPostById } from "$lib/posts.js"
 
 export const load = async ({ params }) => {
     let response = await getPostById(params.postSelected)

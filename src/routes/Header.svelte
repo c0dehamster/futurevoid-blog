@@ -109,6 +109,7 @@
         .header {
             padding-inline: 1.5rem;
         }
+
         .toggle-nav {
             display: inline-flex;
         }

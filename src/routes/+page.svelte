@@ -1,13 +1,11 @@
 <script lang="ts">
-    import { getImage } from "$lib/posts"
-    import type { DBDocument } from "$lib/types/DBdocument"
     import type { Post } from "$lib/types/post"
     import type { Tag } from "$lib/types/tag"
 
     import PostTile from "./PostTile.svelte"
     import Tags from "./Tags.svelte"
 
-    import { tagsSelectedStore } from "./tagsSelected"
+    import { tagsSelectedStore } from "./tagsSelectedStore"
 
     export let data
 
@@ -31,6 +29,7 @@
 
     $: {
         if ($tagsSelectedStore.length > 0) {
+            // Post is shown if it is tagged with at least one of the selected tags
             postsToShow = posts.filter((post) =>
                 post.tags?.some((taggedWith: Tag) =>
                     $tagsSelectedStore.includes(taggedWith)

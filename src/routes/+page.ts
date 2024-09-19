@@ -1,5 +1,5 @@
 import { parseDocumentAsPost } from "$lib/parseDocumentAsPost"
-import { getImage, getPosts } from "$lib/posts"
+import { getImageURL, getPosts } from "$lib/posts"
 import type { Post } from "$lib/types/post"
 
 export const load = async () => {

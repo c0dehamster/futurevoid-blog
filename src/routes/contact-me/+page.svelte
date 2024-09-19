@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <div class="page-wrapper">
     <main class="card">
         <ul class="contact-info">

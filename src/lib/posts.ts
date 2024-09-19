@@ -25,7 +25,7 @@ export const getPostById = async (documentId: string) => {
     )
 }
 
-export const getImage = async (imageId: string) => {
+export const getImageURL = async (imageId: string) => {
     return storage.getFilePreview(IMAGES_BUCKET_ID, imageId)
 }
 

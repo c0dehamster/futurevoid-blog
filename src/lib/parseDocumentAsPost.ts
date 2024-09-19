@@ -1,7 +1,8 @@
 import type { Models } from "../../node_modules/appwrite/types/models"
-import { getImage } from "./posts"
 import type { DBDocument } from "./types/DBdocument"
 import type { Post } from "./types/post"
+
+import { getImageURL } from "./posts"
 
 export const parseDocumentAsPost = async (
     document: Models.Document
@@ -14,7 +15,7 @@ export const parseDocumentAsPost = async (
     let postAsDocument = document as unknown as DBDocument
 
     let imageUrl = postAsDocument.imageId
-        ? (await getImage(postAsDocument.imageId)).href
+        ? (await getImageURL(postAsDocument.imageId)).href
         : null
 
     return {

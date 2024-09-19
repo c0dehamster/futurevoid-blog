@@ -13,7 +13,7 @@
 
     <div class="post__contents">
         {#if post.title}
-            <!-- TODO: human-readable ID generator -->
+            <!-- TODO: human-readable ID generator when uploading posts is implemented -->
             <a href="/{post.id}" class="post__title">{post.title}</a>
         {/if}
 
@@ -40,7 +40,6 @@
 </div>
 
 <style>
-    /* Mobile-first */
     .post {
         position: relative;
 

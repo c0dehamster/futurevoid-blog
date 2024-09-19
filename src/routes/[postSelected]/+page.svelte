@@ -3,7 +3,7 @@
 
     export let data
 
-    let post = data.post as unknown as Post
+    let post = data.post
 </script>
 
 <div class="page-wrapper">
@@ -104,6 +104,10 @@
     }
 
     @media screen and (width > 40rem) {
+        .page-wrapper {
+            padding-inline: 4rem;
+        }
+
         .post {
             padding: 3rem;
 
@@ -128,6 +132,10 @@
     }
 
     @media screen and (width > 64rem) {
+        .page-wrapper {
+            padding-inline: 8rem;
+        }
+
         .post {
             padding: 4rem;
 
