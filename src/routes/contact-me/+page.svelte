@@ -4,7 +4,10 @@
     <main class="card">
         <ul class="contact-info">
             <li class="contact-info__list-item">
-                <a href="#0" class="link">
+                <a
+                    href="https://bsky.app/profile/abysscreature.bsky.social"
+                    class="link"
+                >
                     <div class="link__bullet"></div>
                     <span class="link__label"> Me on Bluesky </span>
                 </a>
@@ -16,7 +19,7 @@
             </li>
 
             <li class="contact-info__list-item">
-                <a href="#0" class="link">
+                <a href="https://mastodon.social/@futurevoid" class="link">
                     <div class="link__bullet"></div>
                     <span class="link__label"> Me on Mastodon </span>
                 </a>
@@ -27,7 +30,7 @@
             </li>
 
             <li class="contact-info__list-item">
-                <a href="#0" class="link">
+                <a href="https://github.com/c0dehamster" class="link">
                     <div class="link__bullet"></div>
                     <span class="link__label"> Me on GitHub </span>
                 </a>
