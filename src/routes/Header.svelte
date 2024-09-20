@@ -36,7 +36,7 @@
 
                 <li class="navigation__list-item">
                     <a
-                        href="http://fetchrss.com/rss/66ec7d869593fd7de00868e266ec7d3a09afc3e54603bc33.xml"
+                        href="https://fetchrss.com/rss/66ec7d869593fd7de00868e266ed86dcae6877f07900c812.xml"
                         class="navigation__link">RSS feed</a
                     >
                 </li>
