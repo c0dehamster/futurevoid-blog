@@ -1,11 +1,14 @@
 <script lang="ts">
     import type { Post } from "$lib/types/post"
     import type { Tag } from "$lib/types/tag"
+    import { onMount } from "svelte"
 
     import PostTile from "./PostTile.svelte"
     import Tags from "./Tags.svelte"
 
     import { tagsSelectedStore } from "./tagsSelectedStore"
+    import { page } from "$app/stores"
+    import OptionsDropdown from "$lib/components/OptionsDropdown.svelte"
 
     export let data
 
@@ -39,6 +42,14 @@
             postsToShow = posts
         }
     }
+
+    // Grab the current URL to provide to the posts
+
+    let currentURL = ""
+
+    onMount(() => {
+        currentURL = $page.url.href
+    })
 </script>
 
 <div class="page-wrapper">
@@ -49,7 +60,10 @@
             <ul class="feed">
                 {#each postsToShow as post}
                     <li class="feed__list-item">
-                        <PostTile {post}></PostTile>
+                        <PostTile {post}>
+                            <OptionsDropdown url={`${currentURL}${post.id}`}
+                            ></OptionsDropdown>
+                        </PostTile>
                     </li>
                 {/each}
             </ul>

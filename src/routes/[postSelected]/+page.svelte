@@ -1,15 +1,28 @@
 <script lang="ts">
+    import { page } from "$app/stores"
+    import OptionsDropdown from "$lib/components/OptionsDropdown.svelte"
     import type { Post } from "$lib/types/post"
+    import { onMount } from "svelte"
 
     export let data
 
     let post = data.post
+
+    let currentURL = ""
+
+    onMount(() => {
+        currentURL = $page.url.href
+    })
 </script>
 
 <div class="page-wrapper">
     <main class="main">
         {#if post}
             <div class="post">
+                <div class="post__options">
+                    <OptionsDropdown url={currentURL}></OptionsDropdown>
+                </div>
+
                 <div class="post__contents">
                     {#if post.title}
                         <h1 class="post__title">{post.title}</h1>
@@ -60,6 +73,14 @@
         flex-direction: column;
 
         background-color: var(--color-neutral-800);
+    }
+
+    .post__options {
+        position: absolute;
+        inset-block-start: 1.5rem;
+        inset-inline-end: 1.5rem;
+
+        background-color: transparent;
     }
 
     .post__contents {

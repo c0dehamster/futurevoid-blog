@@ -1,15 +1,15 @@
 <script lang="ts">
     import type { Post } from "$lib/types/post"
 
-    import iconOptions from "$lib/Images/icon-more-vertical.svg"
+    import OptionsDropdown from "$lib/components/OptionsDropdown.svelte"
 
     export let post: Post
 </script>
 
 <div class="post">
-    <button class="post__options">
-        <img src={iconOptions} alt="options" />
-    </button>
+    <div class="post__options">
+        <slot></slot>
+    </div>
 
     <div class="post__contents">
         {#if post.title}
