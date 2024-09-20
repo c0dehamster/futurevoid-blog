@@ -11,7 +11,7 @@
 
     <!-- Temporary. TODO: make a proper logo -->
     <div class="logo">
-        <a href="/" class="logo__link">FutureVoid</a>
+        <a href="/" data-sveltekit-reload class="logo__link">FutureVoid</a>
     </div>
 
     <nav class="navigation {expanded ? 'navigation--expanded' : ''}">
@@ -20,7 +20,9 @@
                 <li
                     class="navigation__list-item navigation__list-item--featured"
                 >
-                    <a href="/" class="navigation__link">Home</a>
+                    <a href="/" data-sveltekit-reload class="navigation__link"
+                        >Home</a
+                    >
                 </li>
 
                 <li class="navigation__list-item">
