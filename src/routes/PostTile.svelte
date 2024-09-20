@@ -1,9 +1,11 @@
 <script lang="ts">
     import type { Post } from "$lib/types/post"
 
-    import OptionsDropdown from "$lib/components/OptionsDropdown.svelte"
+    import { formatBodyText } from "$lib/formatBodyText"
 
     export let post: Post
+
+    let bodyTextFormatted = post.bodyText ? formatBodyText(post.bodyText) : null
 </script>
 
 <div class="post">
@@ -21,8 +23,14 @@
             <img src={post.imageUrl} alt="" class="post__image" />
         {/if}
 
-        {#if post.bodyText}
-            <p class="post__body-text">{post.bodyText}</p>
+        {#if bodyTextFormatted}
+            <div class="post__body-text">
+                {#each bodyTextFormatted as paragraph}
+                    <p class="post__paragraph">
+                        {paragraph}
+                    </p>
+                {/each}
+            </div>
         {/if}
     </div>
 
@@ -79,6 +87,10 @@
     }
 
     .post__body-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
         color: var(--color-neutral-200);
     }
 
