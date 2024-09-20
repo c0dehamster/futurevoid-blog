@@ -15,8 +15,10 @@
 
     <div class="post__contents">
         {#if post.title}
+            <h2 class="post__title">
+                <a href="/{post.id}" class="post__link">{post.title}</a>
+            </h2>
             <!-- TODO: human-readable ID generator when uploading posts is implemented -->
-            <a href="/{post.id}" class="post__title">{post.title}</a>
         {/if}
 
         {#if post.imageUrl}
