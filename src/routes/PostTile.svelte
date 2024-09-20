@@ -83,8 +83,8 @@
         font-weight: bold;
     }
 
-    .post__title:hover,
-    .post__title:focus {
+    .post__link:hover,
+    .post__link:focus {
         text-decoration: underline;
     }
 
