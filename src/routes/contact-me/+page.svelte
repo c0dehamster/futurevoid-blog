@@ -36,8 +36,9 @@
                 </a>
 
                 <p class="contact-info__description">
-                    Not sure why anyone would want to see my GitHub as there is
-                    nothing there, except for the source code of this very site
+                    I am working on a simple focus-tracking app. It is very WIP
+                    and is not hosted yet, but you can check out the repo if you
+                    want
                 </p>
             </li>
         </ul>
